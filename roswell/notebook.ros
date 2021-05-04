@@ -1,0 +1,16 @@
+#|-*- mode:lisp -*-
+exec ros -Q -- $0 "$@" # |#
+(progn ;;init forms
+  (ros:ensure-asdf)
+  #+quicklisp(ql:quickload '(:hunchentoot :hunchensocket :parenscript) :silent t)
+  #-quicklisp(ql:quickload '(:hunchentoot :hunchensocket :parenscript) :silent t)
+  )
+
+(defpackage :ros.script.notebook.3829140513
+  (:use :cl :hunchentoot :hunchensocket :parenscript))
+(in-package :ros.script.notebook.3829140513)
+
+(defun main (&rest argv)
+  (declare (ignorable argv))
+  t)
+;;; vim: set ft=lisp lisp:
