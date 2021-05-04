@@ -5,7 +5,11 @@
   :author "Your Name <your.name@example.com>"
   :license  "Specify license here"
   :version "0.0.1"
-  :serial t
   :depends-on (#:hunchensocket #:parenscript)
-  :components ((:file "package")
-               (:file "notebook")))
+  :components
+  ((:module "src"
+	    :serial t
+	    :components
+	    ((:file "package")
+	     (:file "macros")
+	     (:file "notebook")))))
