@@ -8,10 +8,10 @@ exec ros +Q -- $0 "$@" # |#
 		 (require :hunchensocket)
 		 (require :parenscript)
 		 ))
-  )
+  (require :notebook))
 
 (defpackage :ros.script.notebook.3829140513
-  (:use :cl :hunchentoot :hunchensocket :parenscript)
+  (:use :cl :hunchentoot :hunchensocket :parenscript :notebook)
   (:import-from :uiop #:read-file-string))
 (in-package :ros.script.notebook.3829140513)
 
@@ -62,6 +62,8 @@ exec ros +Q -- $0 "$@" # |#
 
 (defun main (&rest argv)
   (declare (ignorable argv))
-  (start *server*) (loop (sleep 15)))
+  (format t "<< ~s >>~%" notebook:xyz)
+  (start *server*)
+  (loop (sleep 15)))
 
 ;;; vim: set ft=lisp lisp:
